@@ -76,7 +76,7 @@ final class VideoPlayer {
     if (isHTTP(uri)) {
       dataSourceFactory =
           new DefaultHttpDataSourceFactory(
-              "ExoPlayer",
+              "kaios",
               null,
               DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
               DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,

@@ -422,14 +422,14 @@ public class CustomDefaultHttpDataSource extends BaseDataSource implements HttpD
         long position = dataSpec.position;
         long length = dataSpec.length;
         boolean allowGzip = dataSpec.isFlagSet(DataSpec.FLAG_ALLOW_GZIP);
-            //done changes
-            TokenController.getInstance().setExpireTime(1800);
-            TokenController.getInstance().setSsoToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWUiOiIxNWUwY2E0My1iNzI1LTRhYzQtOTg4Ny00MTE2Y2M3MTIxMTAiLCJ1c2VyVHlwZSI6IlJJTHBlcnNvbiIsImF1dGhMZXZlbCI6IjEwIiwiZGV2aWNlSWQiOm51bGwsImp0aSI6Ijk4ZmU4MjZmLWJlMjgtNDYzMy04NTg5LTRjY2I2MjBkNjlkMyIsImlhdCI6MTU3OTU4NDg0NX0.aNZDDG4VLW1pkmnkeqkYRQLVmeqHPKAAaZ6K9NNSiBY");
-            TokenController.getInstance().setTokenId("toilet:ekpremkatha11082017");
+        //done changes
+        TokenController.getInstance().setExpireTime(1800);
+        TokenController.getInstance().setSsoToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWUiOiIxNWUwY2E0My1iNzI1LTRhYzQtOTg4Ny00MTE2Y2M3MTIxMTAiLCJ1c2VyVHlwZSI6IlJJTHBlcnNvbiIsImF1dGhMZXZlbCI6IjEwIiwiZGV2aWNlSWQiOm51bGwsImp0aSI6Ijk4ZmU4MjZmLWJlMjgtNDYzMy04NTg5LTRjY2I2MjBkNjlkMyIsImlhdCI6MTU3OTU4NDg0NX0.aNZDDG4VLW1pkmnkeqkYRQLVmeqHPKAAaZ6K9NNSiBY");
+        TokenController.getInstance().setTokenId("toilet:ekpremkatha11082017");
 
-            url = new URL(TokenController.getInstance().getEncryptedHashUrl(dataSpec.uri.toString()));   //to append the security parameter with URL
-            Log.d("url",url.toString());
-        
+        url = new URL(TokenController.getInstance().getEncryptedHashUrl(dataSpec.uri.toString()));   //to append the security parameter with URL
+        Log.d("url",url.toString());
+
         if (!allowCrossProtocolRedirects) {
             // HttpURLConnection disallows cross-protocol redirects, but otherwise performs redirection
             // automatically. This is the behavior we want, so use it.

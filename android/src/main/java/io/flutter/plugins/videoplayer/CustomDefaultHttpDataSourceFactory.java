@@ -15,6 +15,8 @@
  */
 package io.flutter.plugins.videoplayer;
 
+import android.support.annotation.Nullable;
+
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource.BaseFactory;
 import com.google.android.exoplayer2.upstream.HttpDataSource.Factory;
@@ -24,6 +26,7 @@ import com.google.android.exoplayer2.upstream.TransferListener;
 public final class CustomDefaultHttpDataSourceFactory extends BaseFactory {
 
     private final String userAgent;
+    private final @Nullable
     TransferListener listener;
     private final int connectTimeoutMillis;
     private final int readTimeoutMillis;
@@ -51,7 +54,7 @@ public final class CustomDefaultHttpDataSourceFactory extends BaseFactory {
      * @param listener An optional listener.
      * @see #CustomDefaultHttpDataSourceFactory(String, TransferListener, int, int, boolean)
      */
-    public CustomDefaultHttpDataSourceFactory(String userAgent, TransferListener listener) {
+    public CustomDefaultHttpDataSourceFactory(String userAgent, @Nullable TransferListener listener) {
         this(userAgent, listener, CustomDefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
                 CustomDefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS, false);
     }
@@ -90,7 +93,7 @@ public final class CustomDefaultHttpDataSourceFactory extends BaseFactory {
      */
     public CustomDefaultHttpDataSourceFactory(
             String userAgent,
-            TransferListener listener,
+            @Nullable TransferListener listener,
             int connectTimeoutMillis,
             int readTimeoutMillis,
             boolean allowCrossProtocolRedirects) {

@@ -6,6 +6,7 @@ import static com.google.android.exoplayer2.Player.REPEAT_MODE_OFF;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.view.Surface;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ExoPlaybackException;

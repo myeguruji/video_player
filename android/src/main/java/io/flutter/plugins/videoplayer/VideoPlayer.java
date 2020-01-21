@@ -74,6 +74,7 @@ final class VideoPlayer {
 
     DataSource.Factory dataSourceFactory;
     if (isHTTP(uri)) {
+      Log.d("dinesh","isHTTP if");
       dataSourceFactory =
           new CustomDefaultHttpDataSourceFactory(
               "JioCinemaFireOS",
@@ -82,6 +83,7 @@ final class VideoPlayer {
               DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
               true);
     } else {
+      Log.d("dinesh","isHTTP else");
       dataSourceFactory = new CustomDefaultHttpDataSourceFactory("JioCinemaFireOS");
     }
 

@@ -1,8 +1,10 @@
 package io.flutter.plugins.videoplayer;
 
 import android.net.Uri;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
+
+import androidx.annotation.Nullable;
+
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.upstream.BaseDataSource;
 import com.google.android.exoplayer2.upstream.DataSourceException;
@@ -71,7 +73,8 @@ public class CustomDefaultHttpDataSource extends BaseDataSource implements HttpD
 
     private @Nullable
     DataSpec dataSpec;
-    private @Nullable HttpURLConnection connection;
+    private @Nullable
+    HttpURLConnection connection;
     private @Nullable InputStream inputStream;
     private boolean opened;
 

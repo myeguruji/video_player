@@ -75,14 +75,14 @@ final class VideoPlayer {
     DataSource.Factory dataSourceFactory;
     if (isHTTP(uri)) {
       dataSourceFactory =
-          new DefaultHttpDataSourceFactory(
-              "kaios",
+          new CustomDefaultHttpDataSourceFactory(
+              "JioCinemaFireOS",
               null,
               DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
               DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
               true);
     } else {
-      dataSourceFactory = new DefaultDataSourceFactory(context, "kaios");
+      dataSourceFactory = new CustomDefaultHttpDataSourceFactory("JioCinemaFireOS");
     }
 
     MediaSource mediaSource = buildMediaSource(uri, dataSourceFactory, formatHint, context);

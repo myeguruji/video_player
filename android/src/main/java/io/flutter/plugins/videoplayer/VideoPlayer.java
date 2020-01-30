@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.google.android.exoplayer2.util.Util.getUserAgent
 
 final class VideoPlayer {
   private static final String FORMAT_SS = "ss";
@@ -78,14 +79,14 @@ final class VideoPlayer {
       Log.d("dinesh","isHTTP if");
       dataSourceFactory =
           new CustomDefaultHttpDataSourceFactory(
-              "JioTalks",
+              getUserAgent(context,"JioTalks"),
               null,
               DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
               DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
               true);
     } else {
       Log.d("dinesh","isHTTP else");
-      dataSourceFactory = new CustomDefaultHttpDataSourceFactory("JioTalks");
+      dataSourceFactory = new CustomDefaultHttpDataSourceFactory(getUserAgent(context,"JioTalks"));
     }
 
     MediaSource mediaSource = buildMediaSource(uri, dataSourceFactory, formatHint, context);

@@ -79,14 +79,14 @@ final class VideoPlayer {
       Log.d("dinesh","isHTTP if");
       dataSourceFactory =
           new CustomDefaultHttpDataSourceFactory(
-              getUserAgent(context,"JioTalks"),
+              Util.getUserAgent(context,"JioTalks"),
               null,
               DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
               DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
               true);
     } else {
       Log.d("dinesh","isHTTP else");
-      dataSourceFactory = new CustomDefaultHttpDataSourceFactory(getUserAgent(context,"JioTalks"));
+      dataSourceFactory = new CustomDefaultHttpDataSourceFactory(Util.getUserAgent(context,"JioTalks"));
     }
 
     MediaSource mediaSource = buildMediaSource(uri, dataSourceFactory, formatHint, context);
